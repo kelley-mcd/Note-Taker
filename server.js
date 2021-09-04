@@ -1,14 +1,14 @@
 const express = require('express');
 const path = require('path');
+const { middlewear } = require('./middlewear/middlewear.js');
 const api = require('./public/assets/js/index.js');
 
 const PORT = process.env.port || 3001;
 
-
 //runs the express function
 const app = express();
 
-
+app.use(middlewear);
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
